@@ -35,18 +35,20 @@ departamentos = [ "Bolívar", "Cartagena", "Sucre", "San Andrés y Providencia",
 # Título
 st.title(':blue[SaludMetrik]-Caribe')
 
-st.subheader("Poblacion aproximada de cada departamento", divider="violet")
+st.subheader("Poblacion aproximada de cada departamento ", divider="violet")
+st.text("Datos verificados por el DANE")
 d1,d2,d3,d4,d5 = st.columns(5)
+
 with d1:
-    st.metric(":green[Bolivar]", f"{2044923:,}")
+    st.metric(":green[Bolivar]", f"{2206000:,}")
 with d2:
-    st.metric(":green[Cartagena]", f"{1038625:,}")
+    st.metric(":green[Cartagena]", f"{1059626:,}")
 with d3:
-    st.metric(":green[Sucre]", f"{867412:,}")
+    st.metric(":green[Sucre]", f"{1006044:,}")
 with d4:
-    st.metric(":green[San Andrés y Providencia]", f"{61748:,}")
+    st.metric(":green[San Andrés y Providencia]", f"{56309:,}")
 with d5:
-    st.metric(":green[Córdoba]", f"{1655665:,}")
+    st.metric(":green[Córdoba]", f"{1914778:,}")
 
 # Cargar archivo CSV
 st.sidebar.image("logo.png")
@@ -193,11 +195,11 @@ try:
             
             st.subheader("Regresion lineal de poblacion-capacidad",divider="violet")
             poblacion = {
-            "Bolívar": 2044923,
-            "Cartagena": 1038625,
-            "Sucre": 867412,
-            "San Andrés y Providencia": 61748,
-            "Córdoba": 1655665
+            "Bolívar": 2206000,
+            "Cartagena": 1059626,
+            "Sucre": 1006044,
+            "San Andrés y Providencia": 56309,
+            "Córdoba": 1914778
             }
             #agregar funcionalidad 
             #porcentaje = st.number_input("digite porcentaje a usar para la poblacion", min_value=5,max_value=50)
