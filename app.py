@@ -73,6 +73,10 @@ try:
     st.sidebar.subheader("Todo",divider="green")
     todo = st.sidebar.button("Generar todo")
     
+    st.sidebar.subheader("Referencias",divider="green")
+    st.sidebar.markdown("[📑Donde sacamos los datos](https://www.datos.gov.co/Salud-y-Protecci-n-Social/Relaci-n-de-IPS-p-blicas-y-privadas-seg-n-el-nivel/s2ru-bqt6/about_data)")
+    st.sidebar.markdown("[👤Datos sobre la poblacion](https://www.dane.gov.co)")
+
     # Columnas numéricas
     numerical_columns = df.select_dtypes(include=[np.number]).columns.tolist()
         # Mostrar datos filtrados
@@ -138,7 +142,7 @@ try:
     with f4:
         st.subheader("Naturaleza de sede", divider="green")
         st.dataframe(tabla_naturaleza,hide_index=True , use_container_width=True)
-        
+    st.success("Si desea ver mas informacion puede generar todo el la parte de la barra lateral")
     # --------------- Graficas ---------------- #
     def  graficar(filtered_df):
         st.subheader("Graficas",divider="violet")
