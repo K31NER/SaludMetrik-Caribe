@@ -1,8 +1,10 @@
+#Finalizado
 import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.express as px
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score
 
 # Configuración general de la página
 st.set_page_config(
@@ -228,7 +230,11 @@ try:
             # Mostrar los resultados
             st.write("Resultados del modelo de regresión lineal")
             st.dataframe(capacidad_departamento,use_container_width=True)
-
+            
+            # Cálculo de R^2
+            #r2 = modelo.score(X, y)
+            #st.write(f"El coeficiente de determinación (R²) del modelo es: {r2:.4f}")
+            
             # Visualización de la regresión
             fig = px.scatter(capacidad_departamento, x='Poblacion 5%', y='num cantidad capacidad instalada', 
                     title='Regresión Lineal: Capacidad vs. Población (5%)', 
@@ -238,6 +244,9 @@ try:
             fig.add_traces(px.line(capacidad_departamento, x='Poblacion 5%', y='Prediccion Capacidad').data)
 
             st.plotly_chart(fig)
+            
+
+
 
         except Exception as e:
             st.error(f"Error al generar el gráfico: {e}")
